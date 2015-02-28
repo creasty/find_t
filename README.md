@@ -25,13 +25,13 @@ Synopsis
 --------
 
 ```
-find_t [--rails] {key}
+find_t [-rails] {key}
 ```
 
-| Option    | Description                                   |
-| --------- | --------------------------------------------- |
-| `--rails` | Include full locale files in Rails' load path |
-| `{key}`   | A translation key to search for               |
+| Option   | Description                                   |
+| -------- | --------------------------------------------- |
+| `-rails` | Include full locale files in Rails' load path |
+| `{key}`  | A translation key to search for               |
 
 
 Sample
@@ -39,7 +39,6 @@ Sample
 
 ```sh
 $ find_t 'exception.projectshow'
-Scanning...
 
 == en
 
