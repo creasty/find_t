@@ -4,13 +4,30 @@ require 'pathname'
 module FindT
   class Printer
 
-    def initialize(root_path)
+    COLORS = {
+      black:   0,
+      red:     1,
+      green:   2,
+      yellow:  3,
+      blue:    4,
+      magenta: 5,
+      cyan:    6,
+      white:   7,
+    }
+
+    def initialize(root_path, isatty)
       @root_path = Pathname.new root_path
+      @isatty = isatty
     end
 
-    def print(name, founds)
+    def print_header(name)
+      puts 'Starting find_t at %s' % @root_path.to_s
+      puts 'Scanning "%s"...' % name
+    end
+
+    def print_results(founds)
       unless founds.any?
-        print_empty name
+        print_empty
         return
       end
 
@@ -27,14 +44,14 @@ module FindT
       end
     end
 
-    private def print_empty(name)
+    private def print_empty
       puts
-      puts "Can't find '%s'" % name
+      puts color("Can't find translation for the key", :red)
     end
 
     private def print_title(title)
       puts
-      puts '== %s' % title
+      puts color('==> %s' % title, :blue)
       puts
     end
 
@@ -44,7 +61,7 @@ module FindT
 
       puts <<-EOS
 - #{file}:#{found[:line]}#{conflicted ? '' : ' [CONFLICTED]'}
-  #{text}
+  #{color(text, :green)}
 EOS
     end
 
@@ -55,6 +72,10 @@ EOS
     private def relative_path(file)
       return file unless @root_path
       Pathname.new(file).relative_path_from(@root_path).to_s
+    end
+
+    private def color(str, c)
+      @isatty ? "\e[1;%dm%s\e[0m" % [30 + COLORS[c], str] : str
     end
 
   end

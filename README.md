@@ -39,6 +39,8 @@ Sample
 
 ```sh
 $ find_t 'exception.projectshow'
+Starting find_t at /Users/ykiwng/Develop/wantedly/wantedly
+Scanning "exception.projectshow"...
 
 == en
 

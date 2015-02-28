@@ -6,7 +6,7 @@ require_relative 'printer'
 module FindT
   class CLI
 
-    def initialize(args, root_path)
+    def initialize(args, root_path, isatty)
       @root_path = root_path
 
       parse_options! args
@@ -15,6 +15,7 @@ module FindT
         root_path: @root_path,
         rails:     @options['rails'],
       )
+      @printer = Printer.new @root_path, isatty
 
       run
     end
@@ -25,9 +26,9 @@ module FindT
     end
 
     private def run
+      @printer.print_header @name
       founds = @scanner.scan @name
-      printer = Printer.new @root_path
-      printer.print @name, founds
+      @printer.print_results founds
     end
 
   end

@@ -5,4 +5,4 @@ require 'bundler'
 require 'find_t'
 require 'find_t/cli'
 
-FindT::CLI.new ARGV, File.dirname(Bundler.default_gemfile)
+FindT::CLI.new ARGV, File.dirname(Bundler.default_gemfile), STDOUT.isatty
