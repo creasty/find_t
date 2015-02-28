@@ -1,5 +1,5 @@
-require 'find_t/scanner'
-require 'find_t/version'
+require_relative 'find_t/scanner'
+require_relative 'find_t/version'
 
 module FindT
 

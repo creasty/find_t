@@ -1,6 +1,7 @@
 #!/usr/bin/env bundle exec ruby
 
 require 'rubygems'
+require 'bundler'
 require 'find_t'
 require 'find_t/cli'
 
