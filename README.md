@@ -38,7 +38,7 @@ Sample
 ------
 
 ```sh
-$ ./bin/find_t 'exception.projectshow'
+$ find_t 'exception.projectshow'
 Scanning...
 
 == en
