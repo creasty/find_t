@@ -21,7 +21,7 @@ module FindT
     end
 
     private def parse_options!(args)
-      @options = args.getopts 'rails'
+      @options = args.getopts '', 'rails'
       @name    = args[0]
     end
 
