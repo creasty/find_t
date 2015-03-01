@@ -56,8 +56,32 @@ Scanning...
 ```
 
 
+Using Ruby API
+--------------
+
+```ruby
+require 'find_t'
+
+scanner = FindT::Scanner.new(
+  root_path: '/Users/ykiwng/Develop/wantedly/wantedly',
+  rails:     false,
+)
+
+scanner.scan 'exception.projectshow'
+#=> [
+#     {
+#       locale: 'en',
+#       file:   '/User/ykiwng/Develop/wantedly/wantedly/config/locales/99_naka/en.yml',
+#       line:   23,
+#       text:   '"Sorry, you have to sign up to view this page!"',
+#     },
+#     ...
+#   ]
+```
+
+
 License
 -------
 
-This project is copyright by [Creasty](http://www.creasty.com), released under the MIT lisence.  
+This project is copyright by [Creasty](http://creasty.com), released under the MIT lisence.  
 See `LICENSE` file for details.
