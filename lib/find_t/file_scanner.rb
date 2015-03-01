@@ -31,7 +31,7 @@ module FindT
       level = indent.size >> 1
 
       if level == 0 && text == ''
-        @current_locale = locale
+        @current_locale = scope
         @current_level  = 1
       elsif level == @current_level
         if scope == current_scope
