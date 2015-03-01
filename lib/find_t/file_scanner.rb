@@ -31,11 +31,9 @@ module FindT
       level = indent.size >> 1
 
       if level == 0 && text == ''
-        self.locale = scope
-        return
-      end
-
-      if level == @current_level
+        @current_locale = locale
+        @current_level  = 1
+      elsif level == @current_level
         if scope == current_scope
           if level == @size
             @founds << {
@@ -55,11 +53,6 @@ module FindT
 
     private def current_scope
       @scopes[@current_level]
-    end
-
-    private def locale=(locale)
-      @current_locale = locale
-      @current_level  = 1
     end
 
   end

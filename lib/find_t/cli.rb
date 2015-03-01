@@ -26,7 +26,7 @@ module FindT
     end
 
     private def run
-      @printer.print_header @name
+      @printer.print_header
       founds = @scanner.scan @name
       @printer.print_results founds
     end

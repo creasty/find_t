@@ -40,14 +40,14 @@ Sample
 ```sh
 $ find_t 'exception.projectshow'
 Starting find_t at /Users/ykiwng/Develop/wantedly/wantedly
-Scanning "exception.projectshow"...
+Scanning...
 
-== en
+==> en
 
 - config/locales/99_naka/en.yml:23
   "Sorry, you have to sign up to view this page!"
 
-== ja
+==> ja
 
 - config/locales/01_model/ja.yml:3
   "この募集は、現在非公開です"

@@ -20,9 +20,9 @@ module FindT
       @isatty = isatty
     end
 
-    def print_header(name)
+    def print_header
       puts 'Starting find_t at %s' % @root_path.to_s
-      puts 'Scanning "%s"...' % name
+      puts 'Scanning...'
     end
 
     def print_results(founds)
@@ -51,7 +51,7 @@ module FindT
 
     private def print_title(title)
       puts
-      puts color('==> %s' % title, :blue)
+      puts color('==> %s' % title, :yellow)
       puts
     end
 
