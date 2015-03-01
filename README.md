@@ -1,7 +1,7 @@
 find_t
 ======
 
-**Find locale files of where translation for the key is defined.**
+**Find locale files where translation for key is defined.**
 
 - Lookup all defined translations through languages
 - Detect conflicts for the same translation key across files

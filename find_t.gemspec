@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = FindT::VERSION
   spec.authors       = ['Yuki Iwanaga']
   spec.email         = ['yuki@creasty.com']
-  spec.summary       = %q{Find locale files of where translation for the key is defined}
-  spec.description   = %q{Find locale files of where translation for the key is defined}
+  spec.summary       = %q{Find locale files where translation for key is defined}
+  spec.description   = %q{Find locale files where translation for key is defined}
   spec.homepage      = 'https://github.com/creasty/find_t'
   spec.license       = 'MIT'
 
